@@ -1,0 +1,56 @@
+[{
+    "id":1,
+    "img":"https://www.hotelierindia.com/cloud/2022/05/25/mUp87iQ4-Belgian-Chocolate-NIC-1200x1200.jpg",
+    "proname":"Icecream ",
+    "protype":"NIC",
+    "Mrp":40,
+    "Salep":39,
+    "prodic":"Lorem ipsum dolor sit amet, "
+},
+{
+    "id":2,
+    "img":"https://www.tatanutrikorner.com/cdn/shop/products/6617128-1_TataTeaElaichiChai_250gm_Hero.jpg?v=1649673606",
+    "proname":"Tata Tea ",
+    "protype":"TATA",
+    "Mrp":40,
+    "Salep":39,
+    "prodic":"Lorem ipsum dolor sit amet, "
+},
+
+{
+    "id":3,
+    "img":"https://www.hotelierindia.com/cloud/2022/05/25/mUp87iQ4-Belgian-Chocolate-NIC-1200x1200.jpg",
+    "proname":"Women ",
+    "protype":"Women,bag",
+    "Mrp":40,
+    "Salep":39,
+    "prodic":"Lorem ipsum dolor sit amet, "
+},
+{
+    "id":4,
+    "img":"https://www.hotelierindia.com/cloud/2022/05/25/mUp87iQ4-Belgian-Chocolate-NIC-1200x1200.jpg",
+    "proname":"Women ",
+    "protype":"Women,bag",
+    "Mrp":40,
+    "Salep":39,
+    "prodic":"Lorem ipsum dolor sit amet, "
+},
+{
+    "id":4,
+    "img":"https://www.hotelierindia.com/cloud/2022/05/25/mUp87iQ4-Belgian-Chocolate-NIC-1200x1200.jpg",
+    "proname":"Women ",
+    "protype":"Women,bag",
+    "Mrp":40,
+    "Salep":39,
+    "prodic":"Lorem ipsum dolor sit amet, "
+},
+{
+    "id":4,
+    "img":"https://www.hotelierindia.com/cloud/2022/05/25/mUp87iQ4-Belgian-Chocolate-NIC-1200x1200.jpg",
+    "proname":"Women ",
+    "protype":"Women,bag",
+    "Mrp":40,
+    "Salep":39,
+    "prodic":"Lorem ipsum dolor sit amet, "
+}
+]
