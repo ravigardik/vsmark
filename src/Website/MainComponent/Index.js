@@ -20,37 +20,43 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 // import Slider from 'react-slick';
 
+function Arrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "block", background: "grey" }}
+      onClick={onClick}
+    />
+  );
+}
+
 const Index = () => {
   var settings = {
-    dots: true,
-    infinite: false,
+    dots: false,
+    infinite: true,
     speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 4,
+    slidesToShow: 5,
+    slidesToScroll: 2,
+    nextArrow: <Arrow />,
+    prevArrow: <Arrow />,
     initialSlide: 0,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToShow: 2,
+          // slidesToScroll: 2,
           // infinite: true,
           // dots: true
         },
       },
       {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
-        },
-      },
-      {
-        breakpoint: 480,
+        breakpoint: 768,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1,
+          // slidesToScroll: 1,
+          // initialSlide: 2
         },
       },
     ],
@@ -139,7 +145,7 @@ const Index = () => {
 
       {/* carousol */}
       {/* categories caroseol start */}
-      <div className="container ">
+      {/* <div className="container ">
         <Slider {...settings}>
           {Category.map((category) => (
             <div>
@@ -154,7 +160,23 @@ const Index = () => {
             </div>
           ))}
         </Slider>
+      </div> */}
+      {/* {/ slick slider map /} */}
+      <div className="container mt-5">
+        {/* {/ <h2> Single Item</h2> /} */}
+        <Slider {...settings}>
+          {Category.map((cat, index) => (
+            <div key={index}>
+              <img
+                src={cat.category_banner}
+                className="hj1"
+                alt={`Image ${index}`}
+              />
+            </div>
+          ))}
+        </Slider>
       </div>
+      {/* {/ end slick slider map /} */}
       {/* small card  start */}
 
       <br />
