@@ -3,10 +3,13 @@ import Authuser from "../Aauthentication/Authuser";
 import { useState } from "react";
 import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
+import { Button } from "react-bootstrap";
 
 const SubcatagorisProduct = () => {
   let { cat_id, sub_id } = useParams();
   const { http } = Authuser();
+
+  const [pages, Setpages] = useState(1);
 
   const [Category, SetCategory] = useState([]);
   // console.log(Category)
@@ -27,9 +30,17 @@ const SubcatagorisProduct = () => {
   function nextpage() {
     SetFromidx((prevFromidx) => prevFromidx + 9);
     SetIndex((prevIndex) => prevIndex + 9);
+    Setpages(pages + 1);
   }
-  console.log(Index);
-  console.log(Fromidx);
+
+  function Previoupage() {
+    SetFromidx((prevFromidx) => prevFromidx - 9);
+    SetIndex((prevIndex) => prevIndex - 9);
+    Setpages(pages - 1);
+  }
+
+  // console.log(Index);
+  // console.log(Fromidx);
 
   const subcate = () => {
     try {
@@ -170,18 +181,22 @@ const SubcatagorisProduct = () => {
       </div>
       <nav aria-label="Page navigation example">
         <ul className="pagination justify-content-center">
-          <li className="page-item disabled">
-            <a className="page-link" href="#" tabIndex={-1}>
+          <li className="page-item ">
+            <Button className=" page-link" onClick={Previoupage}>
               Previous
+            </Button>
+          </li>
+          {/* <li className="page-item"><Link className="page-link" to="/">1</Link></li> */}
+          <li className="page-item">
+            <a className="page-link" href="">
+              {pages}
             </a>
           </li>
-          {/* <li className="page-item"><Link className="page-link" to="/">1</Link></li>
-                    <li className="page-item"><a className="page-link" href="#">2</a></li>
-                    <li className="page-item"><a className="page-link" href="#">3</a></li> */}
+          {/* <li className="page-item"><a className="page-link" href="#">3</a></li> */}
           <li className="page-item">
-            <Link className="page-link" onClick={nextpage}>
+            <Button className="page-link" onClick={nextpage}>
               Next
-            </Link>
+            </Button>
           </li>
         </ul>
       </nav>

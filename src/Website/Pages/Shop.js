@@ -248,6 +248,7 @@ const Shop = () => {
               3
             </a>
           </li>
+
           <li className="page-item">
             <a className="page-link" href="#">
               Next
