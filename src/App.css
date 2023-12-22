@@ -9,7 +9,7 @@
 
 .header {
   justify-content: center;
-  background-image: linear-gradient(red, black);
+  background-image: linear-gradient(rgb(255, 123, 0), black);
   color: white;
 }
 
@@ -167,7 +167,7 @@ offcan:hover {
 
 /* footer start  */
 .spad {
-  background-image: linear-gradient(red, black);
+  background-image: linear-gradient(rgb(255, 123, 0), black);
   color: white;
 }
 
@@ -436,7 +436,8 @@ nav ul.navigation-menu li:hover ul li:nth-child(10) {
   justify-content: center;
   box-shadow: 7px 6px 5px;
   height: fit-content;
-  background-image: linear-gradient(red, black);
+  /* background-image: linear-gradient(red, black); */
+  background-image: linear-gradient(rgb(255, 123, 0), black);
 }
 
 .product-card {
@@ -719,7 +720,7 @@ a {
   box-shadow: 1px 10px 8px #888888;
 }
 .smallcard:hover {
-  box-shadow: 10px 0px 7px red;
+  box-shadow: 10px 0px 7px rgb(11, 11, 11);
 }
 
 .best1 {
@@ -839,15 +840,23 @@ a {
   background-image: linear-gradient(red, black);
 }
 .allpro {
-  height: 400px;
+  height: 350px;
   /* background-color: #363636; */
   background-image: url("https://static.vecteezy.com/system/resources/thumbnails/022/085/861/small_2x/realistic-blur-background-of-store-department-store-supermarket-or-grocery-store-ai-generated-image-photo.jpg");
   background-size: cover;
   margin-bottom: 10px;
 }
+
+.allbarnd {
+  height: 350px;
+  /* background-color: #363636; */
+  background-image: url("https://www.shop-in-supermarkets.com/images/retail_brands_mob.jpg");
+  background-size: cover;
+  margin-bottom: 10px;
+}
 .cover {
   margin: 0px;
-  height: 400px;
+  height: 350px;
   background-color: black;
   opacity: 0.7;
   color: white;
@@ -1193,4 +1202,31 @@ table th {
 /* wishlist css */
 .wishtable {
   background-color: #00a000;
+}
+
+/* paggignation css start */
+.page-link {
+  /* background-color: rgb(217, 38, 68); */
+  color: black;
+  font-family: "Times New Roman", Times, serif;
+}
+.proback {
+  height: 15px;
+  width: 100px;
+  background-color: green;
+}
+.proicon1 {
+  height: 50px;
+  margin-top: -30px;
+  margin-left: 30px;
+  width: 50px;
+  border-radius: 50px;
+  background-color: #00a000;
+}
+.proicon1 i {
+  font-size: large;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  color: white;
 }

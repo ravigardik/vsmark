@@ -10,6 +10,7 @@ import Login from "./Website/Aauthentication/Login";
 import Cartview from "./Website/Pages/Cartview";
 import Wishlist from "./Website/Pages/Wishlish";
 import Search from "./Website/Pages/Search";
+import Brand from "./Website/Pages/Brand";
 
 function App() {
   return (
@@ -21,6 +22,11 @@ function App() {
           <Route
             path="/product-shop/:cat_id/:sub_id"
             element={<Master Comp={SubcatagorisProduct} />}
+          />
+
+          <Route
+            path="/product-shop/:brand_id"
+            element={<Master Comp={Brand} />}
           />
           <Route path="/register" element={<Master Comp={Register} />} />
           <Route path="/login" element={<Master Comp={Login} />} />

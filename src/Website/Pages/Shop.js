@@ -56,6 +56,24 @@ const Shop = () => {
       });
   };
 
+  const [pages, Setpages] = useState(1);
+
+  const [Fromidx, SetFromidx] = useState(0);
+
+  const [Index, SetIndex] = useState(9);
+
+  function nextpage() {
+    SetFromidx((prevFromidx) => prevFromidx + 9);
+    SetIndex((prevIndex) => prevIndex + 9);
+    Setpages(pages + 1);
+  }
+
+  function Previoupage() {
+    SetFromidx((prevFromidx) => prevFromidx - 9);
+    SetIndex((prevIndex) => prevIndex - 9);
+    Setpages(pages - 1);
+  }
+
   return (
     <>
       <div className="conntainer-fluid allpro">
@@ -154,7 +172,7 @@ const Shop = () => {
           </div>
           <div className="col-md-9">
             <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 ">
-              {Product.slice(0, 6).map((product) => (
+              {Product.slice(Fromidx, Index).map((product) => (
                 <div className="col " key={product.id}>
                   <div className="card">
                     <div className="product-tumb">
@@ -227,32 +245,24 @@ const Shop = () => {
         </div>
       </div>
       <nav aria-label="Page navigation example">
-        <ul className="pagination justify-content-center">
-          <li className="page-item disabled">
-            <a className="page-link" href="#" tabIndex={-1}>
+        <ul className="Page1 pagination justify-content-center">
+          <li className="page-item ">
+            <button className=" page-link" onClick={Previoupage}>
               Previous
+            </button>
+          </li>
+          {/* <li className="page-item"><Link className="page-link" to="/">1</Link></li> */}
+          <li className="page-item disabled">
+            <a className="page-link" href="">
+              {" "}
+              Current Page -{pages}
             </a>
           </li>
+          {/* <li className="page-item"><a className="page-link" href="#">3</a></li> */}
           <li className="page-item">
-            <Link className="page-link" to="/">
-              1
-            </Link>
-          </li>
-          <li className="page-item">
-            <a className="page-link" href="#">
-              2
-            </a>
-          </li>
-          <li className="page-item">
-            <a className="page-link" href="#">
-              3
-            </a>
-          </li>
-
-          <li className="page-item">
-            <a className="page-link" href="#">
+            <button className="page-link" onClick={nextpage}>
               Next
-            </a>
+            </button>
           </li>
         </ul>
       </nav>

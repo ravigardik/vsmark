@@ -279,7 +279,9 @@ const Header = ({ name, ...props }) => {
               <ul>
                 {Brand.slice(0, 5).map((brands) => (
                   <li>
-                    <Link to="/">{brands.brand_name}</Link>
+                    <Link to={`/product-shop/${brands.brand_id}`}>
+                      {brands.brand_name}
+                    </Link>
                   </li>
                 ))}
                 <li>

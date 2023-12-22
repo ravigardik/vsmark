@@ -128,10 +128,10 @@ const Login = () => {
                           <div className="form-group mt-2">
                             <input
                               type="password"
-                              name="logpass"
+                              name="password"
                               className="form-style"
                               placeholder="Your Password"
-                              id="logpass"
+                              id="password"
                               autoComplete="off"
                             />
                             <i className="input-icon uil uil-lock-alt" />

@@ -143,24 +143,6 @@ const Index = () => {
         <img src="https://vsmart.ajspire.com/uploads/slider/1667297122.jpg" />
       </div>
 
-      {/* carousol */}
-      {/* categories caroseol start */}
-      {/* <div className="container ">
-        <Slider {...settings}>
-          {Category.map((category) => (
-            <div>
-              <div
-                className="ducar"
-                style={{
-                  background: `url(${category.category_banner})`,
-                }}
-              >
-                <h6 className="">{category.category_name}</h6>
-              </div>
-            </div>
-          ))}
-        </Slider>
-      </div> */}
       {/* {/ slick slider map /} */}
       <div className="container mt-5">
         {/* {/ <h2> Single Item</h2> /} */}

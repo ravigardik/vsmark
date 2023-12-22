@@ -85,106 +85,117 @@ const Cartview = () => {
   // };
 
   return (
-    <div>
-      <div className="conntainer-fluid allpro">
-        <div className="conntainer-fluid cover">
-          <h1 className="heading">Your Cart </h1>
+    <>
+      <div>
+        <div className="conntainer-fluid allpro">
+          <div className="conntainer-fluid cover">
+            <h1 className="heading">Your Cart </h1>
+          </div>
         </div>
-      </div>
-      <div className="container carttable">
-        <table className="table-cart overflow-scroll">
-          <thead>
-            <tr className="cartrow">
-              <th>Sr.No</th>
-              <th> Product</th>
-              <th>Product Name </th>
-              <th>Price</th>
-              <th> Brand </th>
-              <th>Quantity</th>
-              <th>Tav</th>
-              <th>Pv </th>
-              <th>Total</th>
-            </tr>
-          </thead>
+        <div className="container carttable">
+          <table className="table-cart overflow-scroll">
+            <thead>
+              <tr className="cartrow">
+                <th>Sr.No</th>
+                <th> Product</th>
+                <th>Product Name </th>
+                <th>Price</th>
+                <th> Brand </th>
+                <th>Quantity</th>
+                <th>Tav</th>
+                <th>Pv </th>
+                <th>Total</th>
+              </tr>
+            </thead>
 
-          <tbody className="tbody-cart">
-            {Cart.map((item) => (
-              <tr className="table-body">
-                <td className="li-product-remove">
-                  <li>
-                    {/* <li onClick={() => removewishlist(item.wish_id)}> */}
-                    <i className="fa fa-times" />
-                  </li>
-                </td>
-                <td className="li-product-thumbnail">
-                  <a href="#">
-                    <img
-                      width={150}
-                      height={150}
-                      src={
-                        "https://vsmart.ajspire.com/uploads/product_image/" +
-                        item.product_image
-                      }
-                      alt="Li's Product Image"
-                    />
-                  </a>
-                </td>
-                <td className="li-product-name">
-                  <a href="#">{item.english_name}</a>
-                </td>
-                <td className="li-product-price">
-                  <span className="amount">&#8377;{item.online_price}</span>
-                </td>
-                <td>{item.brand_name}</td>
-                <td className="quantity">
-                  {/* <label>Quantity</label> */}
-                  <div className="cart-plus-minus">
-                    <input
-                      type="number"
-                      className="form-control"
-                      value={item.cart_product_qty}
-                    />
-                    {/* <div className="dec qtybutton">
+            <tbody className="tbody-cart">
+              {Cart.map((item) => (
+                <tr className="table-body">
+                  <td className="li-product-remove">
+                    <li>
+                      {/* <li onClick={() => removewishlist(item.wish_id)}> */}
+                      <i className="fa fa-times" />
+                    </li>
+                  </td>
+                  <td className="li-product-thumbnail">
+                    <a href="#">
+                      <img
+                        width={150}
+                        height={150}
+                        src={
+                          "https://vsmart.ajspire.com/uploads/product_image/" +
+                          item.product_image
+                        }
+                        alt="Li's Product Image"
+                      />
+                    </a>
+                  </td>
+                  <td className="li-product-name">
+                    <a href="#">{item.english_name}</a>
+                  </td>
+                  <td className="li-product-price">
+                    <span className="amount">&#8377;{item.online_price}</span>
+                  </td>
+                  <td>{item.brand_name}</td>
+                  <td className="quantity">
+                    {/* <label>Quantity</label> */}
+                    <div className="cart-plus-minus">
+                      <input
+                        type="number"
+                        className="form-control"
+                        value={item.cart_product_qty}
+                      />
+                      {/* <div className="dec qtybutton">
                       <i className="fa fa-angle-down" />
                     </div>
                     <div className="inc qtybutton">
                       <i className="fa fa-angle-up" />
                     </div> */}
-                  </div>
-                </td>
-                <td className="product-subtotal">
-                  <span className="amount">
-                    &#8377;
-                    {(
-                      (item.online_price *
-                        item.cart_product_qty *
-                        item.tax_per) /
-                      (100 + item.tax_per)
-                    ).toFixed(2)}
-                  </span>
-                </td>
-                <td className="product-subtotal">
-                  <span className="amount">{item.point_value}</span>
-                </td>
+                    </div>
+                  </td>
+                  <td className="product-subtotal">
+                    <span className="amount">
+                      &#8377;
+                      {(
+                        (item.online_price *
+                          item.cart_product_qty *
+                          item.tax_per) /
+                        (100 + item.tax_per)
+                      ).toFixed(2)}
+                    </span>
+                  </td>
+                  <td className="product-subtotal">
+                    <span className="amount">{item.point_value}</span>
+                  </td>
 
-                <td className="product-subtotal">
-                  &#8377;{item.online_price * item.cart_product_qty}
-                </td>
-              </tr>
-            ))}
-            {/* <tr className="table-body">
+                  <td className="product-subtotal">
+                    &#8377;{item.online_price * item.cart_product_qty}
+                  </td>
+                </tr>
+              ))}
+              {/* <tr className="table-body">
               <td>ravi</td>
             </tr> */}
-          </tbody>
-        </table>
+            </tbody>
+          </table>
 
-        <br />
+          <br />
+        </div>
+        <div className="container text-black">
+          <h1>Cart Detailes</h1>
+          <h3>Sub Total</h3>
+          <button className="btn"> Procces to check out </button>
+        </div>
       </div>
-      <div className="container text-black">
-        <h1>Cart Detailes</h1>
-        <h3>Sub Total</h3>
+      <h3>Payment </h3>
+      <div className="proback"></div>
+      <div className="proicon">
+        <i class="fa-solid fa-check "></i>
       </div>
-    </div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </>
   );
 };
 
