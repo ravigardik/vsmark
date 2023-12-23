@@ -138,7 +138,7 @@ const Login = () => {
                           </div>
                           <a
                             href="#"
-                            className="btn mt-4"
+                            className="btnlog mt-4"
                             onClick={(e) => OnLogin(e)}
                           >
                             submit
@@ -219,7 +219,7 @@ const Login = () => {
                             <i className="input-icon uil uil-lock-alt" />
                           </div>
                           <button
-                            className="btn mt-4"
+                            className="btnlog mt-4"
                             onClick={(e) => onSubmit(e)}
                           >
                             submit

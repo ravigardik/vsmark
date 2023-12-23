@@ -293,13 +293,41 @@ const Index = () => {
                       {product.sale_price}
                     </div>
 
-                    <div className="product-links">
-                      <Link to="/">
-                        <i className="fa fa-heart proicon" />
-                      </Link>
-                      <Link to="/">
-                        <i className="fa fa-shopping-cart proicon" />
-                      </Link>
+                    <div className="product-links margin1">
+                      {token ? (
+                        <abbr title="Add to WishList">
+                          <Link
+                            className="links-details"
+                            onClick={() => addTowish(product.product_id)}
+                          >
+                            <i className="fa fa-heart proicon" />
+                          </Link>
+                        </abbr>
+                      ) : (
+                        <abbr title="Add to WishList">
+                          <Link className="links-details" to={"/login"}>
+                            <i className="fa fa-heart proicon" />
+                          </Link>
+                        </abbr>
+                      )}
+
+                      {token ? (
+                        <abbr title="Add to Cart">
+                          <Link
+                            className="add-cart active"
+                            onClick={() => addTocart(product.product_id)}
+                          >
+                            <i className="fa fa-shopping-cart "> </i>
+                          </Link>
+                        </abbr>
+                      ) : (
+                        <abbr title="Add to Cart">
+                          <Link to={"/login"}>
+                            <i className="fa fa-shopping-cart "> </i>
+                          </Link>
+                        </abbr>
+                      )}
+
                       <Link to="/">
                         <i class="fa-solid fa-eye proicon"></i>
                       </Link>

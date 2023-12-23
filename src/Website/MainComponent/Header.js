@@ -5,7 +5,7 @@ import Authuser from "../Aauthentication/Authuser";
 // import '../../App.css'
 
 const Header = ({ name, ...props }) => {
-  const { http, user, token } = Authuser();
+  const { http, user, token, logout } = Authuser();
   const [Cart, setCart] = useState([]);
   const [Product, SetProduct] = useState([]);
   const [username, Setusername] = useState();
@@ -109,16 +109,6 @@ const Header = ({ name, ...props }) => {
   }, [token]);
   return (
     <>
-      {/* <div className='container-fluid bg-success '>
-        <div className='row'>
-          <div className='col-lg-6'> 
-        <b className='text-light'>Welcome to VS Mart in Your Dream Online Store! </b>
-        </div>
-        <div className='col-lg-6 px-5 text-end '>
-          <Link to="/contact" className=''><p className='con ' >Contact</p></Link>
-        </div>
-        </div>
-      </div> */}
       <div className="container-fluid header  bg-light">
         <div className="container">
           <nav className="navbar navbar-expand-lg navbar-light  navesh ms-5 ">
@@ -224,11 +214,18 @@ const Header = ({ name, ...props }) => {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link to="/login" className="nav-link">
-                    <div className="icons">
+                  <Link to="/login" className="nav-link d-flex">
+                    <div className="icons ">
                       {" "}
                       <i class="fa-solid fa-solidi fa-user-tie"></i>
-                      <p className="foot"> Login </p>
+                      {token ? (
+                        <p className="foot text-white"> LogOut</p>
+                      ) : (
+                        <a className="foot text-white " onClick={logout}>
+                          {" "}
+                          LogIn
+                        </a>
+                      )}
                     </div>
                   </Link>
                 </li>
@@ -341,7 +338,7 @@ const Header = ({ name, ...props }) => {
                   />
                   <div class="rating">
                     <h5 class="card-title text-black text-bold">
-                      {Cart.english_name}
+                      {item.english_name}
                     </h5>
 
                     <h6> Rs. {item.sale_price} </h6>
