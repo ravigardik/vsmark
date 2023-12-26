@@ -11,6 +11,8 @@ import Cartview from "./Website/Pages/Cartview";
 import Wishlist from "./Website/Pages/Wishlish";
 import Search from "./Website/Pages/Search";
 import Brand from "./Website/Pages/Brand";
+import Checkout from "./Website/Pages/Checkout";
+import Myorder from "./Website/Pages/Myorder";
 
 function App() {
   return (
@@ -33,6 +35,8 @@ function App() {
           <Route path="/viewcart" element={<Master Comp={Cartview} />} />
           <Route path="/wishlist" element={<Master Comp={Wishlist} />} />
           <Route path="/search" element={<Master Comp={Search} />} />
+          <Route path="/checkout" element={<Master Comp={Checkout} />} />
+          <Route path="/myorder" element={<Master Comp={Myorder} />} />
         </Routes>
       </BrowserRouter>
     </>

@@ -112,7 +112,7 @@ const Login = () => {
                     <div className="card-front">
                       <div className="center-wrap">
                         <div className="section text-center">
-                          <h4 className="mb-4 pb-3">Log In</h4>
+                          <h4 className="mb-4 pb-3 text-white">Log In</h4>
                           <div className="form-group">
                             <input
                               type="email"
@@ -151,7 +151,7 @@ const Login = () => {
                     <div className="card-back">
                       <div className="center-wrap">
                         <div className="section text-center">
-                          <h4 className="mb-4 pb-3">Register Now</h4>
+                          <h4 className="mb-4 pb-3 text-white">Register Now</h4>
                           <div className="form-group">
                             <input
                               type="text"

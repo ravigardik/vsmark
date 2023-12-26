@@ -2,6 +2,7 @@ import React from "react";
 import Authuser from "../Aauthentication/Authuser";
 import { useState } from "react";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Cartview = () => {
   const { http, token } = Authuser();
@@ -86,13 +87,13 @@ const Cartview = () => {
 
   return (
     <>
-      <div className="conntainer-fluid allpro">
-        <div className="conntainer-fluid cover">
+      <div className="container-fluid allpro">
+        <div className="container-fluid cover">
           <h1 className="heading">Your Cart </h1>
         </div>
       </div>
-      <div className="container carttable">
-        <table className="table  ">
+      <div className="container carttable pe-2">
+        <table className="table table3  scrollbar ">
           <thead className="bg-success">
             <tr className="cartrow">
               <th>Sr.No</th>
@@ -119,8 +120,8 @@ const Cartview = () => {
                 <td className="li-product-thumbnail">
                   <a href="#">
                     <img
-                      width={150}
-                      height={150}
+                      width={100}
+                      height={100}
                       src={
                         "https://vsmart.ajspire.com/uploads/product_image/" +
                         item.product_image
@@ -179,47 +180,42 @@ const Cartview = () => {
         </table>
 
         <br />
-        <table class="table  bg-white">
+      </div>
+      <div className="container  mt-1 ">
+        <table className="table bg-white ">
+          <tr className="bg-white ">
+            <th className="bg-white">
+              <h4>Sub Total : {}</h4>
+            </th>
+            <th>
+              <h5> {1}</h5>
+            </th>
+          </tr>
           <tr>
-            <td>
-              <h3>Sub Total : {}</h3>
-            </td>
-            <td>
-              <h3> {1}</h3>
-            </td>
+            <th>
+              <h4>PV Total : {}</h4>
+            </th>
+            <th>
+              <h5> {1}</h5>
+            </th>
+          </tr>
+          <tr>
+            <th>
+              <h4>Tax Total : {}</h4>
+            </th>
+            <th>
+              <h5> {1}</h5>
+            </th>
           </tr>
         </table>
       </div>
-      <div className="container text-black bg-light">
+      <div className="container text-black bg-light p-2">
         <div class="d-grid gap-2">
           <button class="btn btn-primary" type="button">
-            Procces to check out{" "}
+            <Link to={"/checkout"}>Procces to check out </Link>
           </button>
         </div>
       </div>
-      <div className="container">
-        <div class="col ">
-          <ul id="progressbar">
-            <li class="step0 active " id="step1">
-              PLACED
-            </li>
-            <li class="step0 active text-center" id="step2">
-              SHIPPED
-            </li>
-            <li class="step0  text-muted text-right" id="step3">
-              DELIVERED
-            </li>
-          </ul>
-        </div>
-      </div>
-      {/* <h3>Payment </h3>
-      <div className="proback"></div>
-      <div className="proicon">
-        <i class="fa-solid fa-check "></i>
-      </div>
-      <div></div>
-      <div></div>
-      <div></div> */}
     </>
   );
 };

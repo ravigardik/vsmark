@@ -63,14 +63,14 @@ const Shop = () => {
   const [Index, SetIndex] = useState(9);
 
   function nextpage() {
-    SetFromidx((prevFromidx) => prevFromidx + 9);
-    SetIndex((prevIndex) => prevIndex + 9);
+    SetFromidx(Fromidx + 9);
+    SetIndex(Index + 9);
     Setpages(pages + 1);
   }
 
   function Previoupage() {
-    SetFromidx((prevFromidx) => prevFromidx - 9);
-    SetIndex((prevIndex) => prevIndex - 9);
+    SetFromidx(Fromidx - 9);
+    SetIndex(Index - 9);
     Setpages(pages - 1);
   }
 
