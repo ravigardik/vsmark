@@ -13,6 +13,7 @@ import Search from "./Website/Pages/Search";
 import Brand from "./Website/Pages/Brand";
 import Checkout from "./Website/Pages/Checkout";
 import Myorder from "./Website/Pages/Myorder";
+import Scroll from "./Website/Pages/Scroll";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
           <Route path="/search" element={<Master Comp={Search} />} />
           <Route path="/checkout" element={<Master Comp={Checkout} />} />
           <Route path="/myorder" element={<Master Comp={Myorder} />} />
+          <Route path="/scroll" element={<Master Comp={Scroll} />} />
         </Routes>
       </BrowserRouter>
     </>

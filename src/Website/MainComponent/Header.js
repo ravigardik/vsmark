@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, Offcanvas } from "react-bootstrap";
+import { Button, Collapse, Offcanvas } from "react-bootstrap";
 import { Link, useSearchParams } from "react-router-dom";
 import Authuser from "../Aauthentication/Authuser";
 // import '../../App.css'
@@ -9,6 +9,7 @@ const Header = ({ name, ...props }) => {
   const [Cart, setCart] = useState([]);
   const [Product, SetProduct] = useState([]);
   const [username, Setusername] = useState();
+  const [suggestions, setSuggestions] = useState([]);
 
   const [searchQuery, setSearchQuery] = useState("");
   const [searchParams, setSearchParams] = useSearchParams(); // Use useSearchParams
@@ -107,47 +108,48 @@ const Header = ({ name, ...props }) => {
     getslider1();
     getsubcat();
   }, [token]);
+
+  // suggeation code start
+  // const [searchQuery, setSearchQuery] = useState("");
+  const handleSuggestionClick = (suggestion) => {
+    setSearchQuery(suggestion);
+    setSuggestions([]);
+  };
+  const [open, setOpen] = useState(false);
   return (
     <>
       <div className="container-fluid header  bg-light">
         <div className="container">
           <nav className="navbar navbar-expand-lg navbar-light  navesh ms-5 ">
-            <Link className="navbar-brand " to="/">
+            <Link className="navbar-brand " to="/scroll">
               <img className="roy" src="asset/img/logo.png" alt="" />
             </Link>
-            <button
+            <Button
               className="navbar-toggler"
               type="button"
-              data-toggle="collapse"
-              data-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
+              onClick={() => setOpen(!open)}
+              aria-controls="example-collapse-text"
+              aria-expanded={open}
             >
               <span className="navbar-toggler-icon" />
-            </button>
-            <div
-              className="collapse navbar-collapse  "
-              id="navbarSupportedContent"
-            >
-              {/* <form className="form-inline my-2 my-lg-0">
+            </Button>
+            <Collapse in={open}>
+              <div
+                className="collapse navbar-collapse  "
+                id="example-collapse-text"
+              >
+                {/* <form className="form-inline my-2 my-lg-0">
             <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
 
           </form> */}
 
-              <form className="search">
+                {/* <form className="search">
                 <input
                   type="text"
                   placeholder="Search"
-                  className="searchinput"
                   value={searchQuery}
                   onChange={handleInputChange}
                 />
-                {/* <Link to="/search">
-                  <button type="button" className="searchbutton">
-                    <i class="fa-solid fa-magnifying-glass fa-beat-fade"></i>
-                  </button>
-                </Link> */}
 
                 <button className="searchbutton">
                   <Link
@@ -158,79 +160,108 @@ const Header = ({ name, ...props }) => {
                     <i class="fa-solid fa-magnifying-glass fa-beat-fade"></i>
                   </Link>
                 </button>
-              </form>
+              </form> */}
+                <form className="search">
+                  <input
+                    type="text"
+                    placeholder="Search"
+                    value={searchQuery}
+                    onChange={handleInputChange}
+                  />
 
-              <ul className="navbar-nav mr-auto ms-5">
-                <li className="nav-item active ">
-                  <Link className="nav-link" to="/">
-                    <div className="icons ">
-                      {" "}
-                      <i class="fa-solid fa-solidi fa-wallet"></i>
-                    </div>
-                    <span className="sr-only">(current)</span>
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/">
-                    <div className="icons">
-                      {" "}
-                      <i class="fa-solid fa-solidi fa-shuffle"></i>
-                    </div>
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  {/* <Link className="nav-link" to="/wishlist">
+                  {suggestions.length > 0 && (
+                    <ul className="suggestions-list">
+                      {Cart.map((item, index) => (
+                        <li key={index}>{item.english_name}</li>
+                      ))}
+                    </ul>
+                  )}
+
+                  <button className="searchbutton">
+                    <Link
+                      className="text-white"
+                      to={`/search?query=${encodeURIComponent(searchQuery)}`}
+                      onClick={() => {
+                        // Handle the search action here if needed
+                      }}
+                    >
+                      <i className="fa-solid fa-magnifying-glass fa-beat-fade"></i>
+                    </Link>
+                  </button>
+                </form>
+
+                <ul className="navbar-nav mr-auto ms-5">
+                  <li className="nav-item active ">
+                    <Link className="nav-link" to="/">
+                      <div className="icons ">
+                        {" "}
+                        <i class="fa-solid fa-solidi fa-wallet"></i>
+                      </div>
+                      <span className="sr-only">(current)</span>
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/">
+                      <div className="icons">
+                        {" "}
+                        <i class="fa-solid fa-solidi fa-shuffle"></i>
+                      </div>
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    {/* <Link className="nav-link" to="/wishlist">
                     <div className="icons">
                       {" "}
                       <i class="fa-solid fa-solidi fa-heart"></i>
                     </div>
                   </Link> */}
-                  {token ? (
-                    <Link className="nav-link" to={"/wishlist"}>
-                      <div className="icons">
-                        {" "}
-                        <i class="fa-solid fa-solidi fa-heart"></i>
-                      </div>
-                    </Link>
-                  ) : (
-                    <Link className="nav-link" to={"/login"}>
-                      <div className="icons">
-                        {" "}
-                        <i class="fa-solid fa-solidi fa-heart"></i>
-                      </div>
-                    </Link>
-                  )}
-                </li>
-                <li className="nav-item">
-                  <Link
-                    variant="primary"
-                    onClick={handleShow}
-                    className="me-2 nav-link"
-                  >
-                    <div className="icons">
-                      {" "}
-                      <i class="fa-solid fa-solidi fa-basket-shopping"></i>
-                    </div>
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link to="/login" className="nav-link d-flex">
-                    <div className="icons ">
-                      {" "}
-                      <i class="fa-solid fa-solidi fa-user-tie"></i>
-                      {token ? (
-                        <p className="foot text-white"> LogOut</p>
-                      ) : (
-                        <a className="foot text-white " onClick={logout}>
+                    {token ? (
+                      <Link className="nav-link" to={"/wishlist"}>
+                        <div className="icons">
                           {" "}
-                          LogIn
-                        </a>
-                      )}
-                    </div>
-                  </Link>
-                </li>
-              </ul>
-            </div>
+                          <i class="fa-solid fa-solidi fa-heart"></i>
+                        </div>
+                      </Link>
+                    ) : (
+                      <Link className="nav-link" to={"/login"}>
+                        <div className="icons">
+                          {" "}
+                          <i class="fa-solid fa-solidi fa-heart"></i>
+                        </div>
+                      </Link>
+                    )}
+                  </li>
+                  <li className="nav-item">
+                    <Link
+                      variant="primary"
+                      onClick={handleShow}
+                      className="me-2 nav-link"
+                    >
+                      <div className="icons">
+                        {" "}
+                        <i class="fa-solid fa-solidi fa-basket-shopping"></i>
+                      </div>
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link to="/login" className="nav-link d-flex">
+                      <div className="icons ">
+                        {" "}
+                        <i class="fa-solid fa-solidi fa-user-tie"></i>
+                        {token ? (
+                          <p className="foot text-white"> LogOut</p>
+                        ) : (
+                          <a className="foot text-white " onClick={logout}>
+                            {" "}
+                            LogIn
+                          </a>
+                        )}
+                      </div>
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </Collapse>
           </nav>
         </div>
       </div>

@@ -67,24 +67,6 @@ const Cartview = () => {
     console.log(disc);
   }, [Cart]);
 
-  // const removewishlist = (wish_id) => {
-  //   // console.log(wish_id);
-  //   http
-  //     .get(`/remove-from-wishlist/${wish_id}`)
-  //     .then((res) => {
-  //       // console.log(res.data);
-  //       setWish(wish_id);
-  //       console.log(
-  //         setWishlist((prevWishlist) =>
-  //           prevWishlist.filter((item) => item.wish_id !== wish_id)
-  //         )
-  //       );
-  //     })
-  //     .catch((e) => {
-  //       console.log(e);
-  //     });
-  // };
-
   return (
     <>
       <div className="container-fluid allpro">

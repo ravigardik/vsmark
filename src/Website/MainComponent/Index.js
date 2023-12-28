@@ -136,10 +136,10 @@ const Index = () => {
           </Carousel.Item>
         ))}
       </Carousel>
-      <div className="container-fluide deal">
+      <div className="container-fluid deal">
         <h1 className=""> Best Deals</h1>
       </div>
-      <div className="container ">
+      <div className="container">
         <img src="https://vsmart.ajspire.com/uploads/slider/1667297122.jpg" />
       </div>
 

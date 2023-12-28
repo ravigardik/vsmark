@@ -115,6 +115,9 @@ p {
   background-image: linear-gradient(rgb(255, 123, 0), black);
   color: white;
 }
+.navbar-toggler :hover {
+  background-color: white;
+}
 
 .roy {
   height: 60px;
@@ -996,6 +999,7 @@ a {
 }
 a:hover {
   text-decoration: none;
+  color: black;
 }
 .link {
   color: #c4c3ca;
