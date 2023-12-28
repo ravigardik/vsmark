@@ -2,6 +2,7 @@
   padding: 0%;
   margin: 0%;
 }
+
 /* Track code start */
 @import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
 .track {
@@ -56,7 +57,7 @@
   margin-top: 7px;
 }
 
-/* track end  */
+/* tracking end  */
 .itemside {
   position: relative;
   display: -webkit-box;
@@ -295,7 +296,7 @@ body {
   margin: 0;
 
   /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
-  font-size: 11px;
+  /* font-size: 11px; */
   /* color: white; */
 }
 
@@ -988,15 +989,7 @@ a {
   background-repeat: no-repeat;
   background-size: cover;
 }
-body {
-  /* font-family: 'Poppins', sans-serif; */
-  font-weight: 300;
-  font-size: 15px;
-  line-height: 1.7;
 
-  /* background-color: #1f2029; */
-  overflow-x: hidden;
-}
 a {
   cursor: pointer;
   transition: all 200ms linear;

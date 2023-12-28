@@ -4,8 +4,11 @@ import { Link, useLocation, useSearchParams } from "react-router-dom";
 
 const Search = () => {
   const { http, user, token } = Authuser();
+
   const [Product, setProduct] = useState([]);
+
   const location = useLocation();
+
   const [searchParams] = useSearchParams(location.search); // Use useSearchParams
 
   const query = searchParams.get("query");
@@ -67,7 +70,7 @@ const Search = () => {
           <div className="col-md-12">
             <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 ">
               {Product.map((search) => (
-                <div className="col " key={search.id}>
+                <div className="col " key={search.product_id}>
                   <div className="card">
                     <div className="product-tumb">
                       <img

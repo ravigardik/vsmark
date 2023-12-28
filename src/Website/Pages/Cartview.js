@@ -188,7 +188,7 @@ const Cartview = () => {
               <h4>Sub Total : {}</h4>
             </th>
             <th>
-              <h5> {1}</h5>
+              <h5> {subtotal.toFixed(2)}</h5>
             </th>
           </tr>
           <tr>
@@ -196,7 +196,7 @@ const Cartview = () => {
               <h4>PV Total : {}</h4>
             </th>
             <th>
-              <h5> {1}</h5>
+              <h5> {gst.toFixed(2)}</h5>
             </th>
           </tr>
           <tr>
@@ -204,7 +204,23 @@ const Cartview = () => {
               <h4>Tax Total : {}</h4>
             </th>
             <th>
-              <h5> {1}</h5>
+              <h5> {pv.toFixed(2)}</h5>
+            </th>
+          </tr>
+          <tr>
+            <th>
+              <h4>Discount Total: {}</h4>
+            </th>
+            <th>
+              <h5> {disc.toFixed(2)}</h5>
+            </th>
+          </tr>
+          <tr>
+            <th>
+              <h4> Total(Incl. TAX) {}</h4>
+            </th>
+            <th>
+              <h5> {subtotal.toFixed(2)}</h5>
             </th>
           </tr>
         </table>

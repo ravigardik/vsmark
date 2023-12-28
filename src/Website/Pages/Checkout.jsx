@@ -27,7 +27,7 @@ const Checkout = () => {
             <div class="card11">
               <div class="card-body">
                 <h5 class="card-title">Contact Number</h5>
-                <p>8600539158</p>
+                <p>{user.mob_no}</p>
               </div>
             </div>
           </div>

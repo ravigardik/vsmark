@@ -66,13 +66,25 @@ const Shop = () => {
     SetFromidx(Fromidx + 9);
     SetIndex(Index + 9);
     Setpages(pages + 1);
+    const element = document.getElementById("section-1");
+    if (element) {
+      // 👇 Will scroll smoothly to the top of the next section
+      element.scrollIntoView({ behavior: "smooth" });
+    }
   }
 
   function Previoupage() {
     SetFromidx(Fromidx - 9);
     SetIndex(Index - 9);
     Setpages(pages - 1);
+    const element = document.getElementById("section-1");
+    if (element) {
+      // 👇 Will scroll smoothly to the top of the next section
+      element.scrollIntoView({ behavior: "smooth" });
+    }
   }
+  // Scroll used
+  const handleClickScroll = () => {};
 
   return (
     <>
@@ -81,7 +93,7 @@ const Shop = () => {
           <h1 className="heading">VIEW ALL PRODUCT </h1>
         </div>
       </div>
-      <div className="container-fluid">
+      <div className="container-fluid" id="section-1">
         <div className="row">
           <div className="col-md-3">
             <div className="bg-light p-3">
@@ -260,7 +272,7 @@ const Shop = () => {
           </li>
           {/* <li className="page-item"><a className="page-link" href="#">3</a></li> */}
           <li className="page-item">
-            <button className="page-link" onClick={nextpage}>
+            <button className="page-link btn-scroll" onClick={nextpage}>
               Next
             </button>
           </li>
