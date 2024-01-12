@@ -6,7 +6,7 @@ const Footer = () => {
     <>
       {/* Footer Section Begin */}
       <footer className="footer spad">
-        <div className="container">
+        <div className="container-fluid">
           <div className="row ">
             <div className="col-lg-3 col-md-6 col-sm-6 ">
               <div className="footer__about foot">

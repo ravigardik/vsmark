@@ -135,35 +135,14 @@ const Header = ({ name, ...props }) => {
             </Button>
             <Collapse in={open}>
               <div
-                className="collapse navbar-collapse  "
+                className="collapse navbar-collapse   "
                 id="example-collapse-text"
               >
-                {/* <form className="form-inline my-2 my-lg-0">
-            <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-
-          </form> */}
-
-                {/* <form className="search">
-                <input
-                  type="text"
-                  placeholder="Search"
-                  value={searchQuery}
-                  onChange={handleInputChange}
-                />
-
-                <button className="searchbutton">
-                  <Link
-                    className="text-white"
-                    to={`/search?query=${encodeURIComponent(searchQuery)}`}
-                    onChange={() => setSearchParams({ query: searchQuery })}
-                  >
-                    <i class="fa-solid fa-magnifying-glass fa-beat-fade"></i>
-                  </Link>
-                </button>
-              </form> */}
-                <form className="search">
+                <form className="search form-inline my-2 my-lg-0">
                   <input
+                    className="searchinput"
                     type="text"
+                    required
                     placeholder="Search"
                     value={searchQuery}
                     onChange={handleInputChange}
@@ -181,8 +160,12 @@ const Header = ({ name, ...props }) => {
                     <Link
                       className="text-white"
                       to={`/search?query=${encodeURIComponent(searchQuery)}`}
-                      onClick={() => {
+                      onClick={(e) => {
                         // Handle the search action here if needed
+                        if (!searchQuery.trim()) {
+                          e.preventDefault(); // Prevent the link from being followed if the search query is empty
+                          // Optionally, you can display a message or take other actions to inform the user about the required field.
+                        }
                       }}
                     >
                       <i className="fa-solid fa-magnifying-glass fa-beat-fade"></i>
@@ -190,7 +173,7 @@ const Header = ({ name, ...props }) => {
                   </button>
                 </form>
 
-                <ul className="navbar-nav mr-auto ms-5">
+                <ul className="navbar-nav mr-auto ms-5 ">
                   <li className="nav-item active ">
                     <Link className="nav-link" to="/">
                       <div className="icons ">
@@ -209,12 +192,6 @@ const Header = ({ name, ...props }) => {
                     </Link>
                   </li>
                   <li className="nav-item">
-                    {/* <Link className="nav-link" to="/wishlist">
-                    <div className="icons">
-                      {" "}
-                      <i class="fa-solid fa-solidi fa-heart"></i>
-                    </div>
-                  </Link> */}
                     {token ? (
                       <Link className="nav-link" to={"/wishlist"}>
                         <div className="icons">

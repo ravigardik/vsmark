@@ -2,6 +2,9 @@
   padding: 0%;
   margin: 0%;
 }
+.banner12 {
+  width: 100px;
+}
 
 /* Track code start */
 @import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
@@ -114,9 +117,6 @@ p {
   justify-content: center;
   background-image: linear-gradient(rgb(255, 123, 0), black);
   color: white;
-}
-.navbar-toggler :hover {
-  background-color: white;
 }
 
 .roy {
@@ -1461,3 +1461,37 @@ h6 span {
   margin-top: 8px;
   color: #ffffff;
 }
+/* animation  */
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* brand container css start */
+.brands-back {
+  height: 200px;
+  /* background-image: url("https://www.behindthebrands.org/images/media/Images/Signposts/Brand-sign-post.jpg"); */
+  background-color: #19191e0e;
+}
+.brand-box {
+  /* height: auto;
+  width: 100%; */
+  height: 90px;
+
+  margin: 5px;
+  padding-top: 5px;
+  text-align: center;
+  font-family: "Lemon", serif;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px black;
+  background-color: wheat;
+}
+.brand-box:hover {
+  background-image: linear-gradient(rgb(255, 254, 252), black);
+  color: yellow;
+}
+/* brand conatainer css ends */
